@@ -1,0 +1,314 @@
+{
+  "glucose_fasting": {
+    "units": ["mg/dL"],
+    "category": "Metabolic",
+    "ranges": {
+      "Male": { "low": 70.0, "high": 99.0 },
+      "Female": { "low": 70.0, "high": 99.0 }
+    }
+  },
+  "glucose_pp": {
+    "units": ["mg/dL"],
+    "category": "Metabolic",
+    "ranges": {
+      "Male": { "low": 70.0, "high": 140.0 },
+      "Female": { "low": 70.0, "high": 140.0 }
+    }
+  },
+  "glucose_random": {
+    "units": ["mg/dL"],
+    "category": "Metabolic",
+    "ranges": {
+      "Male": { "low": 70.0, "high": 140.0 },
+      "Female": { "low": 70.0, "high": 140.0 }
+    }
+  },
+  "hba1c": {
+    "units": ["%"],
+    "category": "Metabolic",
+    "ranges": {
+      "Male": { "low": 4.0, "high": 5.6 },
+      "Female": { "low": 4.0, "high": 5.6 }
+    }
+  },
+  "insulin": {
+    "units": ["uIU/mL", "mIU/L"],
+    "category": "Metabolic",
+    "ranges": {
+      "Male": { "low": 2.6, "high": 24.9 },
+      "Female": { "low": 2.6, "high": 24.9 }
+    }
+  },
+  "hemoglobin": {
+    "units": ["g/dL", "g/dl"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 13.0, "high": 17.5 },
+      "Female": { "low": 12.0, "high": 15.5 }
+    }
+  },
+  "wbc_count": {
+    "units": ["cumm", "/uL", "cells/mcL", "/cumm"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 4000.0, "high": 11000.0 },
+      "Female": { "low": 4000.0, "high": 11000.0 }
+    }
+  },
+  "rbc_count": {
+    "units": ["million/cumm", "mil/uL", "10^6/uL"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 4.5, "high": 5.9 },
+      "Female": { "low": 4.0, "high": 5.2 }
+    }
+  },
+  "platelet_count": {
+    "units": ["lakhs/cumm", "10^3/uL", "thousand/cumm", "/cumm"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 1.5, "high": 4.5 },
+      "Female": { "low": 1.5, "high": 4.5 }
+    }
+  },
+  "hematocrit": {
+    "units": ["%"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 38.8, "high": 50.0 },
+      "Female": { "low": 34.9, "high": 44.5 }
+    }
+  },
+  "mcv": {
+    "units": ["fL"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 80.0, "high": 100.0 },
+      "Female": { "low": 80.0, "high": 100.0 }
+    }
+  },
+  "mch": {
+    "units": ["pg", "Pg"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 27.0, "high": 33.0 },
+      "Female": { "low": 27.0, "high": 33.0 }
+    }
+  },
+  "mchc": {
+    "units": ["g/dL", "%"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 32.0, "high": 36.0 },
+      "Female": { "low": 32.0, "high": 36.0 }
+    }
+  },
+  "neutrophils": {
+    "units": ["%"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 40.0, "high": 75.0 },
+      "Female": { "low": 40.0, "high": 75.0 }
+    }
+  },
+  "lymphocytes": {
+    "units": ["%"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 20.0, "high": 45.0 },
+      "Female": { "low": 20.0, "high": 45.0 }
+    }
+  },
+  "eosinophils": {
+    "units": ["%"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 1.0, "high": 6.0 },
+      "Female": { "low": 1.0, "high": 6.0 }
+    }
+  },
+  "monocytes": {
+    "units": ["%"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 2.0, "high": 10.0 },
+      "Female": { "low": 2.0, "high": 10.0 }
+    }
+  },
+  "basophils": {
+    "units": ["%"],
+    "category": "Hematology",
+    "ranges": {
+      "Male": { "low": 0.0, "high": 2.0 },
+      "Female": { "low": 0.0, "high": 2.0 }
+    }
+  },
+  "creatinine": {
+    "units": ["mg/dL"],
+    "category": "Renal",
+    "ranges": {
+      "Male": { "low": 0.74, "high": 1.35 },
+      "Female": { "low": 0.59, "high": 1.04 }
+    }
+  },
+  "blood_urea_nitrogen": {
+    "units": ["mg/dL"],
+    "category": "Renal",
+    "ranges": {
+      "Male": { "low": 8.0, "high": 24.0 },
+      "Female": { "low": 6.0, "high": 21.0 }
+    }
+  },
+  "blood_urea": {
+    "units": ["mg/dL"],
+    "category": "Renal",
+    "ranges": {
+      "Male": { "low": 15.0, "high": 45.0 },
+      "Female": { "low": 15.0, "high": 45.0 }
+    }
+  },
+  "uric_acid": {
+    "units": ["mg/dL"],
+    "category": "Renal",
+    "ranges": {
+      "Male": { "low": 3.4, "high": 7.0 },
+      "Female": { "low": 2.4, "high": 6.0 }
+    }
+  },
+  "sodium": {
+    "units": ["mmol/L", "mEq/L"],
+    "category": "Renal",
+    "ranges": {
+      "Male": { "low": 135.0, "high": 145.0 },
+      "Female": { "low": 135.0, "high": 145.0 }
+    }
+  },
+  "potassium": {
+    "units": ["mmol/L", "mEq/L"],
+    "category": "Renal",
+    "ranges": {
+      "Male": { "low": 3.5, "high": 5.2 },
+      "Female": { "low": 3.5, "high": 5.2 }
+    }
+  },
+  "alt_sgpt": {
+    "units": ["U/L", "IU/L"],
+    "category": "Hepatic",
+    "ranges": {
+      "Male": { "low": 7.0, "high": 56.0 },
+      "Female": { "low": 7.0, "high": 56.0 }
+    }
+  },
+  "ast_sgot": {
+    "units": ["U/L", "IU/L"],
+    "category": "Hepatic",
+    "ranges": {
+      "Male": { "low": 8.0, "high": 48.0 },
+      "Female": { "low": 8.0, "high": 48.0 }
+    }
+  },
+  "alkaline_phosphatase": {
+    "units": ["U/L", "IU/L"],
+    "category": "Hepatic",
+    "ranges": {
+      "Male": { "low": 44.0, "high": 147.0 },
+      "Female": { "low": 44.0, "high": 147.0 }
+    }
+  },
+  "total_bilirubin": {
+    "units": ["mg/dL"],
+    "category": "Hepatic",
+    "ranges": {
+      "Male": { "low": 0.2, "high": 1.2 },
+      "Female": { "low": 0.2, "high": 1.2 }
+    }
+  },
+  "direct_bilirubin": {
+    "units": ["mg/dL"],
+    "category": "Hepatic",
+    "ranges": {
+      "Male": { "low": 0.0, "high": 0.3 },
+      "Female": { "low": 0.0, "high": 0.3 }
+    }
+  },
+  "total_proteins": {
+    "units": ["g/dL"],
+    "category": "Hepatic",
+    "ranges": {
+      "Male": { "low": 6.0, "high": 8.3 },
+      "Female": { "low": 6.0, "high": 8.3 }
+    }
+  },
+  "albumin": {
+    "units": ["g/dL"],
+    "category": "Hepatic",
+    "ranges": {
+      "Male": { "low": 3.5, "high": 5.5 },
+      "Female": { "low": 3.5, "high": 5.5 }
+    }
+  },
+  "cholesterol_total": {
+    "units": ["mg/dL"],
+    "category": "Lipid",
+    "ranges": {
+      "Male": { "low": 125.0, "high": 200.0 },
+      "Female": { "low": 125.0, "high": 200.0 }
+    }
+  },
+  "triglycerides": {
+    "units": ["mg/dL"],
+    "category": "Lipid",
+    "ranges": {
+      "Male": { "low": 40.0, "high": 150.0 },
+      "Female": { "low": 35.0, "high": 135.0 }
+    }
+  },
+  "hdl_cholesterol": {
+    "units": ["mg/dL"],
+    "category": "Lipid",
+    "ranges": {
+      "Male": { "low": 40.0, "high": 60.0 },
+      "Female": { "low": 50.0, "high": 60.0 }
+    }
+  },
+  "ldl_cholesterol": {
+    "units": ["mg/dL"],
+    "category": "Lipid",
+    "ranges": {
+      "Male": { "low": 50.0, "high": 100.0 },
+      "Female": { "low": 50.0, "high": 100.0 }
+    }
+  },
+  "blood_pressure": {
+    "units": ["mmHg"],
+    "category": "Cardiovascular",
+    "ranges": {
+      "Male": { "low": 90.0, "high": 120.0 },
+      "Female": { "low": 90.0, "high": 120.0 }
+    }
+  },
+  "tsh": {
+    "units": ["uIU/mL", "mIU/L"],
+    "category": "Thyroid",
+    "ranges": {
+      "Male": { "low": 0.4, "high": 4.5 },
+      "Female": { "low": 0.4, "high": 4.5 }
+    }
+  },
+  "ft3": {
+    "units": ["pg/mL"],
+    "category": "Thyroid",
+    "ranges": {
+      "Male": { "low": 2.3, "high": 4.2 },
+      "Female": { "low": 2.3, "high": 4.2 }
+    }
+  },
+  "ft4": {
+    "units": ["ng/dL"],
+    "category": "Thyroid",
+    "ranges": {
+      "Male": { "low": 0.8, "high": 1.8 },
+      "Female": { "low": 0.8, "high": 1.8 }
+    }
+  }
+}
