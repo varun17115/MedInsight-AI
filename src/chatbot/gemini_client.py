@@ -8,13 +8,13 @@ import google.generativeai as genai
 load_dotenv()
 logger = logging.getLogger(__name__)
 
-# Ultra-fast real-time models in order of latency and availability
+# Ultra-fast real-time models in order of benchmark latency (< 1.5s)
 MODEL_CANDIDATES = [
-    "gemini-flash-latest",
-    "gemini-2.5-flash-lite",
-    "gemini-3.6-flash",
     "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
     "gemini-3.5-flash",
+    "gemini-3.6-flash",
+    "gemini-flash-latest",
     "gemini-pro-latest"
 ]
 
