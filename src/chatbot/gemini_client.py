@@ -8,14 +8,14 @@ import google.generativeai as genai
 load_dotenv()
 logger = logging.getLogger(__name__)
 
-# Preferred models in order of priority
+# Ultra-fast real-time models in order of latency and availability
 MODEL_CANDIDATES = [
-    "gemini-3.6-flash",
-    "gemini-3.5-flash",
     "gemini-flash-latest",
-    "gemini-pro-latest",
-    "gemini-2.5-flash",
-    "gemini-1.5-flash"
+    "gemini-2.5-flash-lite",
+    "gemini-3.6-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash",
+    "gemini-pro-latest"
 ]
 
 class GeminiClient:
@@ -91,8 +91,23 @@ class GeminiClient:
         prompt_parts.append(f"\nPatient's Question: {user_message}\n\nMedInsight AI Clinical Response:")
         full_prompt = "\n".join(prompt_parts)
 
+        # Immediate warm response for greetings without latency
+        if user_message.strip().lower() in ["hi", "hii", "hello", "hey", "good morning", "good evening"]:
+            return (
+                "Hello! 👋 I am your **MedInsight AI Clinical Assistant**.\n\n"
+                "I have your medical report context loaded in memory. You can ask me anything about your results—for example:\n"
+                "- *'What does my test result mean?'*\n"
+                "- *'Why is my value flagged high/low?'*\n"
+                "- *'What diet and lifestyle changes are recommended for me?'*\n"
+                "- *'Which doctor should I see based on my risks?'*"
+            )
+
         try:
-            response = self.model.generate_content(full_prompt)
+            gen_cfg = {
+                "max_output_tokens": 1024,
+                "temperature": 0.2,
+            }
+            response = self.model.generate_content(full_prompt, generation_config=gen_cfg)
             if response and response.text:
                 return response.text.strip()
             else:
@@ -101,9 +116,8 @@ class GeminiClient:
             logger.error(f"Gemini API generation error: {e}")
             # Try secondary fallback model before falling back to local heuristic
             try:
-                
                 backup_model = genai.GenerativeModel("gemini-flash-latest")
-                resp = backup_model.generate_content(full_prompt)
+                resp = backup_model.generate_content(full_prompt, generation_config={"max_output_tokens": 800})
                 if resp and resp.text:
                     return resp.text.strip()
             except Exception:
