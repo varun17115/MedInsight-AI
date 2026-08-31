@@ -2,6 +2,8 @@ import os
 import logging
 from typing import List, Dict, Optional, Any
 from dotenv import load_dotenv
+# pyrefly: ignore [missing-import]
+import google.generativeai as genai
 
 load_dotenv()
 logger = logging.getLogger(__name__)
@@ -29,7 +31,7 @@ class GeminiClient:
             return
 
         try:
-            import google.generativeai as genai
+            
             genai.configure(api_key=self.api_key)
 
             # Find first active and supported model candidate
@@ -99,7 +101,7 @@ class GeminiClient:
             logger.error(f"Gemini API generation error: {e}")
             # Try secondary fallback model before falling back to local heuristic
             try:
-                import google.generativeai as genai
+                
                 backup_model = genai.GenerativeModel("gemini-flash-latest")
                 resp = backup_model.generate_content(full_prompt)
                 if resp and resp.text:
