@@ -31,24 +31,11 @@ class GeminiClient:
             return
 
         try:
-            
             genai.configure(api_key=self.api_key)
-
-            # Find first active and supported model candidate
-            for candidate in MODEL_CANDIDATES:
-                try:
-                    m = genai.GenerativeModel(candidate)
-                    # Quick check if candidate initializes
-                    self.model = m
-                    self.active_model_name = candidate
-                    logger.info(f"Gemini client initialized successfully with model: {candidate}")
-                    break
-                except Exception:
-                    continue
-
-            if not self.model:
-                self.model = genai.GenerativeModel("gemini-3.6-flash")
-                self.active_model_name = "gemini-3.6-flash"
+            # Direct ultra-fast initialization with sub-1.5s latency model
+            self.model = genai.GenerativeModel("gemini-3.5-flash-lite")
+            self.active_model_name = "gemini-3.5-flash-lite"
+            logger.info("Gemini client initialized with gemini-3.5-flash-lite")
         except Exception as e:
             logger.error(f"Failed to initialize Google Generative AI: {e}")
             self.model = None
