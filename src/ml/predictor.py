@@ -4,6 +4,7 @@ import numpy as np
 from pathlib import Path
 import sys
 import logging
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -47,7 +48,11 @@ class DiseasePredictor:
             expected_features = []
 
         row = {}
-        age_val = float(profile.get('age', 45))
+        try:
+            age_raw = profile.get('age', 45)
+            age_val = float(re.sub(r"[^\d.-]", "", str(age_raw))) if str(age_raw).strip() else 45.0
+        except (ValueError, TypeError):
+            age_val = 45.0
         gender_val = str(profile.get('gender', 'Male')).lower()
         is_male = 1 if ('m' in gender_val and 'f' not in gender_val) else 0
 
@@ -128,7 +133,15 @@ class DiseasePredictor:
             if val is None:
                 val = 0.0
 
-            row[feat] = float(val)
+            try:
+                if isinstance(val, str):
+                    # Clean out common non-numeric chars like '<', '>', comma, spaces
+                    cleaned_val = re.sub(r"[^\d.-]", "", val)
+                    row[feat] = float(cleaned_val) if cleaned_val else 0.0
+                else:
+                    row[feat] = float(val)
+            except (ValueError, TypeError):
+                row[feat] = 0.0
 
         return pd.DataFrame([row])
 
